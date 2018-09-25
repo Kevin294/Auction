@@ -24,6 +24,7 @@ public class Address {
 	@Column(name="areacode")
 	private Integer areacode;
 	
+
 	
 	public Address() {
 		

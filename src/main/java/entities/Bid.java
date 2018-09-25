@@ -16,4 +16,12 @@ public class Bid {
 	@Column(name ="user")
 	private String username;
 	
+	public Bid() {
+		
+	}
+	
+	public Bid(Double value, String username) {
+		this.value = value;
+		this.username = username;
+	}
 }
