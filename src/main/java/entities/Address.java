@@ -8,10 +8,15 @@ public class Address {
 
 	@Id
 	@Column(name="id")
+	@GeneratedValue
 	private Integer id;
 	
 	@Column(name="address")
 	private String address;
+	
+	
+	@Column(name="country")
+	private String country;
 	
 	@Column(name="city")
 	private String city;
@@ -20,5 +25,15 @@ public class Address {
 	private Integer areacode;
 	
 	
+	public Address() {
+		
+	}
+	
+	public Address(String address, String country, String city, Integer areacode) {
+		this.address = address;
+		this.country = country;
+		this.city = city;
+		this.areacode = areacode;
+	}
 	
 }
