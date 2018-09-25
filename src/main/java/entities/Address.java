@@ -24,16 +24,20 @@ public class Address {
 	@Column(name="areacode")
 	private Integer areacode;
 	
+	@OneToOne
+	@JoinColumn(name="username")
+	private User user;
 	
 	public Address() {
 		
 	}
 	
-	public Address(String address, String country, String city, Integer areacode) {
+	public Address(String address, String country, String city, Integer areacode, User user) {
 		this.address = address;
 		this.country = country;
 		this.city = city;
 		this.areacode = areacode;
+		this.user = user;
 	}
 	
 }
