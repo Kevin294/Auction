@@ -32,10 +32,11 @@ public class Auction {
 	public Auction() {
 	}
 
-	public Auction(Bid highestBid, Product product, String uname) {
+	public Auction(Bid highestBid, Product product) {
 		this.highestBid = highestBid;
 		this.product = product;
-		this.uname = uname;
+
+
 	}
 
 }
