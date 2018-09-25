@@ -18,10 +18,20 @@ public class Product {
 
 	@Column(name = "name")
 	private String name;
-	
+
 	@ManyToOne
-	@JoinColumn(name="username")
+	@JoinColumn(name = "username")
 	private User user;
-	
+
+	public Product() {
+
+	}
+
+	public Product(int id, String description, String categori, String name) {
+		this.id = id;
+		this.description = description;
+		this.categori = categori;
+		this.name = name;
+	}
 
 }
