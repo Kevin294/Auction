@@ -1,13 +1,14 @@
 package entities;
 
 import java.io.Serializable;
+import java.util.List;
+
 import javax.persistence.*;
 
 @Entity
 @Table(name = "auction")
 public class Auction {
 
-	private Bid[] bids;
 
 	@Id
 	@GeneratedValue
@@ -20,9 +21,14 @@ public class Auction {
 	@Column(name = "product")
 	private Product product;
 
-	@Column(name = "uname")
-	private String uname;
+	@OneToOne
+	@JoinColumn(name = "username")
+	private User uname;
 
+	@OneToMany
+	@JoinColumn(name="id")
+	private List<Bid> bids;
+	
 	public Auction() {
 	}
 
