@@ -3,7 +3,6 @@ package entities;
 import java.io.Serializable;
 import javax.persistence.*;
 
-
 @Entity
 @Table(name = "auction")
 public class Auction {
@@ -11,6 +10,7 @@ public class Auction {
 	private Bid[] bids;
 
 	@Id
+	@GeneratedValue
 	@Column(name = "id")
 	private Integer id;
 
@@ -22,5 +22,15 @@ public class Auction {
 
 	@Column(name = "uname")
 	private String uname;
+
+	public Auction() {
+	}
+
+	public Auction(Integer id, Bid highestBid, Product product, String uname) {
+		this.id = id;
+		this.highestBid = highestBid;
+		this.product = product;
+		this.uname = uname;
+	}
 
 }
