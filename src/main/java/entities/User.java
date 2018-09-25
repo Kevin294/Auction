@@ -1,5 +1,7 @@
 package entities;
 
+import java.util.List;
+
 import javax.persistence.*;
 
 @Entity
@@ -23,6 +25,10 @@ public class User {
 	
 	@Column(name="phone")
 	private Integer phone;
+	
+	@OneToMany
+	@JoinColumn(name="id")
+	private List<Product> products;
 	
 	public User() {
 		
