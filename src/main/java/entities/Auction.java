@@ -5,7 +5,7 @@ import javax.persistence.*;
 
 
 @Entity
-@Table(name = "Auction")
+@Table(name = "auction")
 public class Auction {
 
 	private Bid[] bids;
