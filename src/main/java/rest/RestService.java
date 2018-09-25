@@ -1,4 +1,4 @@
-/* 
+/*
 package rest;
 
 import javax.ejb.Stateless;
@@ -13,29 +13,30 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
-import entities.Tweet;
-import entities.Tweets;
+import entities.*;
 
 
 
 
 
-@Path("/tweets")
+
+@Path("/user")
 @Stateless
 public class RestService {
 
-	@PersistenceContext(unitName = "Dat250TweetAdvanced")
+	@PersistenceContext(unitName = "DAT250Auction")
 	private EntityManager em;
 
 	@GET
 	@Produces(MediaType.APPLICATION_XML)
 
-	public Response getTweets() {
-		TypedQuery<Tweet> query = em.createNamedQuery(Tweet.FIND_ALL, Tweet.class);
-		Tweets tweets = new Tweets(query.getResultList());
-		return Response.ok(tweets).build();
+	public Response getUser() {
+		TypedQuery<User> query = em.createNamedQuery(User.FIND_ALL, User.class);
+		User user = new user(query.getResultList());
+		return Response.ok(user).build();
 	}
-
+}
+/*
 	@GET
 	@Path("{id}")
 	public Response getTweet(@PathParam("id") String id) {
