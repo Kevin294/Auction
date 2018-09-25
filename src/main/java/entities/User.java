@@ -6,11 +6,22 @@ import javax.persistence.*;
 @Table(name = "users")
 public class User {
 	@Id
+	@Column(name="username")
 	private String username;
+	
+	@Column(name="firstname")
 	private String firstname;
+	
+	@Column(name="lastname")
 	private String lastname;
+	
+	@Column(name="address")
 	private Address address;
+	
+	@Column(name="email")
 	private String email;
+	
+	@Column(name="phone")
 	private Integer phone;
 	
 	public User() {
