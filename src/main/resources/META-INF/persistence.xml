@@ -8,6 +8,8 @@ http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
    	 <jta-data-source>java:app/jdbc/Auction</jta-data-source>
    	 <class>entities.User</class>
    	 <class>entities.Address</class>
+   	 <class>entities.Bid</class>
+   	 <class>entities.Auction</class>
    	 
 	 <properties>
 	 	<property name="javax.persistence.schema-generation.database.action" value="create"/>
