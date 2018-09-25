@@ -18,5 +18,10 @@ public class Product {
 
 	@Column(name = "name")
 	private String name;
+	
+	@ManyToOne
+	@JoinColumn(name="username")
+	private User user;
+	
 
 }
