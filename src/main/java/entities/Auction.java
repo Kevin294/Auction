@@ -10,7 +10,7 @@ public class Auction {
 	private Bid[] bids;
 
 	@Id
-	@GeneratedValue
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "id")
 	private Integer id;
 
