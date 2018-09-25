@@ -13,5 +13,6 @@ public class Bid {
 	@Column(name = "value")
 	private Double value;
 	
-	private User user;
+	@Column(name ="user")
+	private String username;
 }
