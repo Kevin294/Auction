@@ -28,8 +28,7 @@ public class Product {
 
 	}
 
-	public Product(Integer id, String description, String categori, String name) {
-		this.id = id;
+	public Product(String description, String categori, String name) {
 		this.description = description;
 		this.categori = categori;
 		this.name = name;
