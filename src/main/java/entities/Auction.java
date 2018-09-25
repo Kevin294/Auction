@@ -15,15 +15,17 @@ public class Auction {
 	@Column(name = "id")
 	private Integer id;
 
-	@Column(name = "highestBid")
+	@OneToOne
+	@JoinColumn(name = "highestBid")
 	private Bid highestBid;
 
-	@Column(name = "product")
+	@OneToOne
+	@JoinColumn(name = "product")
 	private Product product;
 
 	@OneToOne
-	@JoinColumn(name = "username")
-	private User uname;
+	@JoinColumn(name = "user")
+	private User user;
 
 	@OneToMany
 	@JoinColumn(name="id")
@@ -32,9 +34,10 @@ public class Auction {
 	public Auction() {
 	}
 
-	public Auction(Bid highestBid, Product product) {
+	public Auction(Bid highestBid, Product product, User user) {
 		this.highestBid = highestBid;
 		this.product = product;
+		this.user = user;
 
 
 	}

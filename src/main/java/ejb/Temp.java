@@ -19,7 +19,7 @@ public class Temp {
 		Feedback feedback = new Feedback(4.5,"Kevin294","This dude is the real shit" );
 		Product product = new Product("Titanium Rolex 2017 Model F", "Accessory", "Watch");
 		User user = new User("Kevin294", "Kevin", "Arnesen", address, "kevin@gmail.com", 12345678);
-		Auction auction = new Auction(bid, product, "Kevin294");
+		Auction auction = new Auction(bid, product, user);
 
 		dao.persist(address);
 		dao.persist(bid);
