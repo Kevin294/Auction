@@ -17,7 +17,8 @@ public class User {
 	@Column(name="lastname")
 	private String lastname;
 	
-	@Column(name="address")
+	@OneToOne
+	@JoinColumn(name="id")
 	private Address address;
 	
 	@Column(name="email")
