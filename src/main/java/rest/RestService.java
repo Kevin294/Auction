@@ -1,3 +1,4 @@
+/* 
 package rest;
 
 import javax.ejb.Stateless;
@@ -15,15 +16,9 @@ import javax.ws.rs.core.Response;
 import entities.Tweet;
 import entities.Tweets;
 
-//To test rest operations use the url http://localhost:8080/Dat250Example0/rest/tweets
 
-/**
- * @Author Alejandro Rodriguez
- * Dat250
- * 
- * REST operations examples
- * 
- */
+
+
 
 @Path("/tweets")
 @Stateless
@@ -51,3 +46,4 @@ public class RestService {
 		return Response.ok(tweet).build();
 	}
 }
+*/

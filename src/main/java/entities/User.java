@@ -31,6 +31,10 @@ public class User {
 	@JoinColumn(name="id")
 	private List<Product> products;
 	
+	@OneToMany
+	@JoinColumn(name="id")
+	private List<Feedback> feedback;
+	
 	public User() {
 		
 	}
@@ -42,6 +46,7 @@ public class User {
 		this.address = address;
 		this.email = email;
 		this.phone = phone;
+		
 	}
 
 	public String getUsername() {

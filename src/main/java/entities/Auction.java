@@ -11,7 +11,7 @@ public class Auction {
 
 
 	@Id
-	@GeneratedValue
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "id")
 	private Integer id;
 
@@ -32,8 +32,7 @@ public class Auction {
 	public Auction() {
 	}
 
-	public Auction(Integer id, Bid highestBid, Product product, String uname) {
-		this.id = id;
+	public Auction(Bid highestBid, Product product, String uname) {
 		this.highestBid = highestBid;
 		this.product = product;
 		this.uname = uname;
