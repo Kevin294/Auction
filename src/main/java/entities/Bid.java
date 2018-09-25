@@ -15,4 +15,5 @@ public class Bid {
 	
 	@Column(name ="user")
 	private String username;
+	
 }
