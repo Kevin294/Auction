@@ -10,6 +10,7 @@ public class Auction {
 	private Bid[] bids;
 
 	@Id
+	@GeneratedValue
 	@Column(name = "id")
 	private Integer id;
 
@@ -25,7 +26,7 @@ public class Auction {
 	public Auction() {
 	}
 
-	public Auction(int id, Bid highestBid, Product product, String uname) {
+	public Auction(Integer id, Bid highestBid, Product product, String uname) {
 		this.id = id;
 		this.highestBid = highestBid;
 		this.product = product;
