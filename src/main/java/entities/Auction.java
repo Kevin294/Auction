@@ -1,6 +1,6 @@
 package entities;
 
-import java.io.Serializable;
+
 import java.util.List;
 
 import javax.persistence.*;
@@ -40,6 +40,46 @@ public class Auction {
 		this.user = user;
 
 
+	}
+
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
+
+	public Bid getHighestBid() {
+		return highestBid;
+	}
+
+	public void setHighestBid(Bid highestBid) {
+		this.highestBid = highestBid;
+	}
+
+	public Product getProduct() {
+		return product;
+	}
+
+	public void setProduct(Product product) {
+		this.product = product;
+	}
+
+	public User getUser() {
+		return user;
+	}
+
+	public void setUser(User user) {
+		this.user = user;
+	}
+
+	public List<Bid> getBids() {
+		return bids;
+	}
+
+	public void setBids(List<Bid> bids) {
+		this.bids = bids;
 	}
 
 }

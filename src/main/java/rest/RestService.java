@@ -1,5 +1,6 @@
-/* 
 package rest;
+
+import java.util.List;
 
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
@@ -13,37 +14,32 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
-import entities.Tweet;
-import entities.Tweets;
+import entities.*;
 
 
-
-
-
-@Path("/tweets")
+@Path("/Auction")
 @Stateless
 public class RestService {
 
-	@PersistenceContext(unitName = "Dat250TweetAdvanced")
+	@PersistenceContext(unitName = "DAT250Auction")
 	private EntityManager em;
 
 	@GET
 	@Produces(MediaType.APPLICATION_XML)
-
-	public Response getTweets() {
-		TypedQuery<Tweet> query = em.createNamedQuery(Tweet.FIND_ALL, Tweet.class);
-		Tweets tweets = new Tweets(query.getResultList());
-		return Response.ok(tweets).build();
+	public Response getAuctions() {
+		String querystring = "SELECT t FROM auction t";
+		TypedQuery<Auction> query = em.createNamedQuery(querystring, Auction.class);
+		List<Auction> auctions = query.getResultList();
+		return Response.ok(auctions).build();
 	}
 
 	@GET
 	@Path("{id}")
-	public Response getTweet(@PathParam("id") String id) {
+	public Response getAuction(@PathParam("id") String id) {
 		int idInt = Integer.parseInt(id);
-		Tweet tweet = em.find(Tweet.class, idInt);
-		if (tweet == null)
+		Auction auction = em.find(Auction.class, idInt);
+		if (auction == null)
 			throw new NotFoundException();
-		return Response.ok(tweet).build();
+		return Response.ok(auction).build();
 	}
 }
-*/

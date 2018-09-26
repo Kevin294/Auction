@@ -6,7 +6,7 @@
 	<artifactId>DAT250Auction</artifactId>
 	<packaging>war</packaging>
 	<version>1.0.0</version>
-	<name>Dat250 Tweet Advanced Maven Webapp</name>
+	<name>DAT250 Auction Maven Webapp</name>
 	<url>http://maven.apache.org</url>
 	<dependencies>
 		<!-- Needed to build web applications with request/response workflow -->
@@ -65,7 +65,7 @@
 		</dependency>
 	</dependencies>
 	<build>
-		<finalName>Dat250TweetAdvanced</finalName>
+		<finalName>DAT250Auction</finalName>
 		<pluginManagement>
 			<plugins>
 				<plugin>
