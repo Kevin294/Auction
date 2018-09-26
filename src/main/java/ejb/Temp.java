@@ -28,12 +28,7 @@ public class Temp {
 		dao.persist(user);
 		dao.persist(auction);
 		
-		System.out.println("1:-----"+dao.getAll("address"));
-		System.out.println("2:-----"+dao.getAll("bid"));
-		System.out.println("3:-----"+dao.getAll("feedback"));
-		System.out.println("4:-----"+dao.getAll("product"));
-		System.out.println("5:-----"+dao.getAll("user"));
-		System.out.println("6:-----"+dao.getAll("auction"));
+
 
 	}
 }
