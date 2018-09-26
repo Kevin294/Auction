@@ -16,10 +16,10 @@ public class Bid {
 	@Column(name ="user")
 	private String username;
 	
-	@ManyToOne
+	/*@ManyToOne
 	@JoinColumn(name = "id")
 	private Auction auction;
-	
+	*/
 	public Bid() {
 		
 	}
