@@ -20,6 +20,10 @@ public class Feedback {
 	@Column(name="message")
 	private String message;
 	
+	@ManyToOne
+	@JoinColumn(name = "username")
+	private User user;
+	
 	public Feedback() {
 		
 	}
