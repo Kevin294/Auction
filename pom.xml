@@ -9,6 +9,11 @@
 	<name>DAT250 Auction Maven Webapp</name>
 	<url>http://maven.apache.org</url>
 	<dependencies>
+	<dependency>
+		<groupId>postgresql</groupId>
+		<artifactId>postgresql</artifactId>
+		<version>9.1-901-1.jdbc4</version>
+	</dependency>	
 		<!-- Needed to build web applications with request/response workflow -->
 		<dependency>
 			<groupId>javax.servlet</groupId>
