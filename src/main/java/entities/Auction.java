@@ -20,8 +20,8 @@ public class Auction {
 	@JoinColumn(name = "user")
 	private User user;
 
-	@OneToMany
-	@JoinColumn(name="id")
+	@OneToMany(mappedBy = "auction")
+	
 	private List<Bid> bids;
 	
 	public Auction() {

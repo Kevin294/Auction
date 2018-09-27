@@ -17,6 +17,9 @@ public class Bid {
 	@Column(name = "username")
 	private String username;
 
+	@ManyToOne
+	@JoinColumn(name = "id")
+	private Auction auction;
 	public Bid() {
 
 	}

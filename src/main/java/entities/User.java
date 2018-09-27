@@ -27,12 +27,10 @@ public class User {
 	@Column(name="phone")
 	private Integer phone;
 	
-	@OneToMany
-	@JoinColumn(name="id")
+	@OneToMany(mappedBy="user")
 	private List<Product> products;
 	
-	@OneToMany
-	@JoinColumn(name="id")
+	@OneToMany(mappedBy="user")
 	private List<Feedback> feedback;
 	
 	public User() {
