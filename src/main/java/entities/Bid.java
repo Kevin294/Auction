@@ -46,7 +46,7 @@ public class Bid {
 		return username;
 	}
 
-	public void setAccountname(String username) {
+	public void setUsername(String username) {
 		this.username = username;
 	}
 
