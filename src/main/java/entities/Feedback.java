@@ -1,36 +1,41 @@
 package entities;
 
+
 import javax.persistence.*;
 
 @Entity
-@Table(name="feedback")
+@Table(name = "feedback")
 public class Feedback {
 
 	@Id
-	@Column(name="id")
-	@GeneratedValue
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name = "id")
 	private Integer id;
-	
+	/*
 	@Column(name="stars")
-	private Double stars;
+	private double stars;
 	
 	@Column(name="user")
 	private String username;
-	
+	*/
 	@Column(name="message")
 	private String message;
-	
+	/*
 	@ManyToOne
 	@JoinColumn(name = "username")
 	private User user;
-	
+	*/
 	public Feedback() {
 		
 	}
 	
-	public Feedback(Double stars, String username, String message) {
-		this.stars = stars;
-		this.username = username;
+	public Feedback(String message) {
+		this.message = message;
+	}
+	
+	public Feedback(double stars, String username, String message) {
+	//	this.stars = stars;
+		//this.username = username;
 		this.message = message;
 	}
 
@@ -41,12 +46,12 @@ public class Feedback {
 	public void setId(Integer id) {
 		this.id = id;
 	}
-
-	public Double getStars() {
+/*
+	public double getStars() {
 		return stars;
 	}
 
-	public void setStars(Double stars) {
+	public void setStars(double stars) {
 		this.stars = stars;
 	}
 
@@ -65,5 +70,5 @@ public class Feedback {
 	public void setMessage(String message) {
 		this.message = message;
 	}
-	
+	*/
 }
