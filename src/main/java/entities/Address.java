@@ -7,13 +7,12 @@ import javax.persistence.*;
 public class Address {
 
 	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name="id")
-	@GeneratedValue
 	private Integer id;
 	
 	@Column(name="address")
 	private String address;
-	
 	
 	@Column(name="country")
 	private String country;

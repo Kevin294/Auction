@@ -28,7 +28,7 @@ public class RestService {
 	@Produces(MediaType.APPLICATION_XML)
 	public Response getAuctions() {
 		String querystring = "SELECT t FROM auction t";
-		TypedQuery<Auction> query = em.createNamedQuery(querystring, Auction.class);
+		TypedQuery<Auction> query = em.createQuery(querystring, Auction.class);
 		List<Auction> auctions = query.getResultList();
 		return Response.ok(auctions).build();
 	}
