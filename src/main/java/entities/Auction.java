@@ -1,22 +1,19 @@
 package entities;
 
-
 import java.util.List;
-
 import javax.persistence.*;
 
 @Entity
 @Table(name = "auction")
 public class Auction {
 
-
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "id")
 	private Integer id;
 
-	@OneToOne
-	@JoinColumn(name = "highestBid")
+	/*@OneToOne
+	@JoinColumn(name = "id")
 	private Bid highestBid;
 
 	@OneToOne
@@ -30,14 +27,14 @@ public class Auction {
 	@OneToMany
 	@JoinColumn(name="id")
 	private List<Bid> bids;
-	
+	*/
 	public Auction() {
 	}
 
-	public Auction(Bid highestBid, Product product, User user) {
-		this.highestBid = highestBid;
-		this.product = product;
-		this.user = user;
+	public Auction(Product product, User user) {
+		//this.highestBid = highestBid;
+		//this.product = product;
+		//this.user = user;
 
 
 	}
@@ -50,7 +47,7 @@ public class Auction {
 		this.id = id;
 	}
 
-	public Bid getHighestBid() {
+	/*public Bid getHighestBid() {
 		return highestBid;
 	}
 
@@ -81,5 +78,5 @@ public class Auction {
 	public void setBids(List<Bid> bids) {
 		this.bids = bids;
 	}
-
+*/
 }
