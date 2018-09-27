@@ -1,12 +1,16 @@
 package entities;
 
+import java.io.Serializable;
 import java.util.List;
 
 import javax.persistence.*;
 
 @Entity
-@Table(name = "users")
-public class User {
+@Table(name = "users", schema = "public")
+public class User implements Serializable{
+
+	private static final long serialVersionUID = 1L;
+
 	@Id
 	@Column(name="username")
 	private String username;
@@ -16,17 +20,17 @@ public class User {
 	
 	@Column(name="lastname")
 	private String lastname;
-	
+/*	
 	@OneToOne
 	@JoinColumn(name="id")
 	private Address address;
-	
+*/	
 	@Column(name="email")
 	private String email;
 	
 	@Column(name="phone")
 	private Integer phone;
-	
+/*	
 	@OneToMany
 	@JoinColumn(name="id")
 	private List<Product> products;
@@ -35,7 +39,7 @@ public class User {
 	@OneToMany
 	@JoinColumn(name="id")
 	private List<Feedback> feedback;
-	
+	*/
 	public User() {
 		
 	}
@@ -44,7 +48,7 @@ public class User {
 		this.username = username;
 		this.firstname = firstname;
 		this.lastname = lastname;
-		this.address = address;
+		//this.address = address;
 		this.email = email;
 		this.phone = phone;
 		
@@ -73,7 +77,7 @@ public class User {
 	public void setLastname(String lastname) {
 		this.lastname = lastname;
 	}
-
+/*
 	public Address getAddress() {
 		return address;
 	}
@@ -81,7 +85,7 @@ public class User {
 	public void setAddress(Address address) {
 		this.address = address;
 	}
-
+*/
 	public String getEmail() {
 		return email;
 	}
