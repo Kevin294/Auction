@@ -12,10 +12,6 @@ public class Auction {
 	@Column(name = "id")
 	private Integer id;
 
-	/*@OneToOne
-	@JoinColumn(name = "id")
-	private Bid highestBid;
-
 	@OneToOne
 	@JoinColumn(name = "product")
 	private Product product;
@@ -27,14 +23,13 @@ public class Auction {
 	@OneToMany
 	@JoinColumn(name="id")
 	private List<Bid> bids;
-	*/
+	
 	public Auction() {
 	}
 
 	public Auction(Product product, User user) {
-		//this.highestBid = highestBid;
-		//this.product = product;
-		//this.user = user;
+		this.product = product;
+		this.user = user;
 
 
 	}
@@ -45,14 +40,6 @@ public class Auction {
 
 	public void setId(Integer id) {
 		this.id = id;
-	}
-
-	/*public Bid getHighestBid() {
-		return highestBid;
-	}
-
-	public void setHighestBid(Bid highestBid) {
-		this.highestBid = highestBid;
 	}
 
 	public Product getProduct() {
@@ -78,5 +65,5 @@ public class Auction {
 	public void setBids(List<Bid> bids) {
 		this.bids = bids;
 	}
-*/
+
 }

@@ -11,33 +11,33 @@ public class Feedback {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "id")
 	private Integer id;
-	/*
+	
 	@Column(name="stars")
 	private double stars;
 	
 	@Column(name="user")
 	private String username;
-	*/
-	@Column(name="message")
+	
+	@Column(name = "message")
 	private String message;
-	/*
+	
+
 	@ManyToOne
 	@JoinColumn(name = "username")
 	private User user;
-	*/
+
+	
 	public Feedback() {
 		
 	}
 	
-	public Feedback(String message) {
-		this.message = message;
-	}
-	
 	public Feedback(double stars, String username, String message) {
-	//	this.stars = stars;
-		//this.username = username;
+		this.stars = stars;
+		this.username = username;
 		this.message = message;
+		
 	}
+
 
 	public Integer getId() {
 		return id;
@@ -46,7 +46,7 @@ public class Feedback {
 	public void setId(Integer id) {
 		this.id = id;
 	}
-/*
+
 	public double getStars() {
 		return stars;
 	}
@@ -62,13 +62,13 @@ public class Feedback {
 	public void setUsername(String username) {
 		this.username = username;
 	}
-
+	
 	public String getMessage() {
 		return message;
 	}
+	
 
 	public void setMessage(String message) {
 		this.message = message;
 	}
-	*/
 }
