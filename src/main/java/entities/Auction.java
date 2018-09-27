@@ -1,17 +1,21 @@
 package entities;
 
+import java.io.Serializable;
 import java.util.List;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "auction")
-public class Auction {
+@Table(name = "auction", schema = "public")
+public class Auction implements Serializable{
+
+	
+	private static final long serialVersionUID = 1L;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "id")
 	private Integer id;
-
+/*
 	@OneToOne
 	@JoinColumn(name = "product")
 	private Product product;
@@ -23,17 +27,17 @@ public class Auction {
 	@OneToMany(mappedBy = "auction")
 	
 	private List<Bid> bids;
-	
+*/	
 	public Auction() {
 	}
-
+/*
 	public Auction(Product product, User user) {
 		this.product = product;
 		this.user = user;
 
 
 	}
-
+*/
 	public Integer getId() {
 		return id;
 	}
@@ -41,7 +45,7 @@ public class Auction {
 	public void setId(Integer id) {
 		this.id = id;
 	}
-
+/*
 	public Product getProduct() {
 		return product;
 	}
@@ -65,5 +69,5 @@ public class Auction {
 	public void setBids(List<Bid> bids) {
 		this.bids = bids;
 	}
-
+*/
 }

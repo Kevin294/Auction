@@ -1,10 +1,15 @@
 package entities;
 
+import java.io.Serializable;
+
 import javax.persistence.*;
 
 @Entity
-@Table(name = "product")
-public class Product {
+@Table(name = "product", schema = "public")
+public class Product implements Serializable{
+
+
+	private static final long serialVersionUID = 1L;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -19,11 +24,11 @@ public class Product {
 
 	@Column(name = "name")
 	private String name;
-
+/*
 	@ManyToOne
 	@JoinColumn(name = "username")
 	private User user;
-
+*/
 	public Product() {
 
 	}
@@ -65,7 +70,7 @@ public class Product {
 	public void setName(String name) {
 		this.name = name;
 	}
-
+/*
 	public User getUser() {
 		return user;
 	}
@@ -73,5 +78,5 @@ public class Product {
 	public void setUser(User user) {
 		this.user = user;
 	}
-
+*/
 }
