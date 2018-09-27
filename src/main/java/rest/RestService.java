@@ -1,5 +1,6 @@
 package rest;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.ejb.Stateless;
@@ -27,9 +28,8 @@ public class RestService {
 	@GET
 	@Produces(MediaType.APPLICATION_XML)
 	public Response getAuctions() {
-		String querystring = "SELECT t FROM auction t";
-		TypedQuery<Auction> query = em.createQuery(querystring, Auction.class);
-		List<Auction> auctions = query.getResultList();
+		TypedQuery<Auction> query = em.createNamedQuery(Auction.FIND_ALL, Auction.class);
+		Auctions auctions = new Auctions(query.getResultList());
 		return Response.ok(auctions).build();
 	}
 

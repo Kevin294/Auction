@@ -3,9 +3,12 @@ package entities;
 import java.io.Serializable;
 import java.util.List;
 import javax.persistence.*;
+import javax.xml.bind.annotation.XmlRootElement;
 
 @Entity
+@XmlRootElement
 @Table(name = "auction", schema = "public")
+@NamedQuery(name="Auction.findAll", query="SELECT t FROM Auction t")
 public class Auction implements Serializable{
 
 	
@@ -15,6 +18,8 @@ public class Auction implements Serializable{
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "id")
 	private Integer id;
+	
+	public static final String FIND_ALL = "Auction.findAll";
 /*
 	@OneToOne
 	@JoinColumn(name = "product")
@@ -24,10 +29,7 @@ public class Auction implements Serializable{
 	@JoinColumn(name = "user")
 	private User user;
 
-	@OneToMany(mappedBy = "auction")
-	
-	private List<Bid> bids;
-*/	
+*/
 	public Auction() {
 	}
 /*
@@ -37,7 +39,8 @@ public class Auction implements Serializable{
 
 
 	}
-*/
+	*/
+
 	public Integer getId() {
 		return id;
 	}
@@ -61,7 +64,8 @@ public class Auction implements Serializable{
 	public void setUser(User user) {
 		this.user = user;
 	}
-
+	*/
+/*
 	public List<Bid> getBids() {
 		return bids;
 	}

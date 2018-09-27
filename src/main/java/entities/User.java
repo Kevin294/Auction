@@ -44,7 +44,7 @@ public class User implements Serializable{
 		
 	}
 	
-	public User(String username, String firstname, String lastname, Address address, String email, Integer phone) {
+	public User(String username, String firstname, String lastname, String email, Integer phone) {
 		this.username = username;
 		this.firstname = firstname;
 		this.lastname = lastname;

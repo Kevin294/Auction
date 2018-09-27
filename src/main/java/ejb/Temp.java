@@ -16,17 +16,17 @@ public class Temp {
 	
 	@PostConstruct
 	private void createData() {
-		Address address = new Address("Norway", "Bergen", "Nordåsvegen 66", 5235);
-		Bid bid = new Bid(145.55, "Kevin294");
-		Feedback feedback = new Feedback(4.5,"Kevin294","This dude is the real shit" );
+		//Address address = new Address("Norway", "Bergen", "Nordåsvegen 66", 5235);
+		//Bid bid = new Bid(145.55, "Kevin294");
+		//Feedback feedback = new Feedback(4.5,"Kevin294","This dude is the real shit" );
 		Product product = new Product("Titanium Rolex 2017 Model F", "Accessory", "Watch");
-		User user = new User("Kevin294", "Kevin", "Arnesen", address, "kevin@gmail.com", 12345678);
-		Auction auction = new Auction(bid, product, user);
+		User user = new User("Kevin294", "Kevin", "Arnesen", "kevin@gmail.com", 12345678);
+		Auction auction = new Auction(product, user);
 
 		
-		dao.persist(address);
-		dao.persist(bid);
-		dao.persist(feedback);
+		//dao.persist(address);
+		//dao.persist(bid);
+		//dao.persist(feedback);
 		dao.persist(product);
 		dao.persist(user);
 		dao.persist(auction);
@@ -34,4 +34,5 @@ public class Temp {
 
 
 	}
+	
 }*/
