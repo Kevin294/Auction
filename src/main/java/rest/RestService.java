@@ -1,5 +1,6 @@
 package rest;
 
+import java.net.URI;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -9,18 +10,25 @@ import javax.persistence.PersistenceContext;
 import javax.persistence.TypedQuery;
 import javax.ws.rs.GET;
 import javax.ws.rs.NotFoundException;
+import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
+import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
+import javax.ws.rs.core.UriInfo;
 
 import entities.*;
 
 
 @Path("/Auction")
+@Produces(MediaType.APPLICATION_XML)
 @Stateless
 public class RestService {
+	
+	@Context
+	private UriInfo uriInfo;
 
 	@PersistenceContext(unitName = "DAT250Auction")
 	private EntityManager em;
@@ -41,5 +49,11 @@ public class RestService {
 		if (auction == null)
 			throw new NotFoundException();
 		return Response.ok(auction).build();
+	}
+	@POST
+	public Response createAuction(Auction auction) {
+		em.persist(auction);
+		URI auctionUri = uriInfo.getAbsolutePathBuilder().path(Integer.toString(auction.getId())).build();
+		return Response.created(auctionUri).build();
 	}
 }

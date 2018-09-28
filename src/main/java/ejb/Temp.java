@@ -1,6 +1,7 @@
-/*package ejb;
+package ejb;
 
 import javax.annotation.PostConstruct;
+import javax.ejb.EJB;
 import javax.ejb.Singleton;
 import javax.ejb.Startup;
 import javax.persistence.EntityManager;
@@ -8,31 +9,31 @@ import javax.persistence.PersistenceContext;
 
 import entities.*;
 
-@Singleton
 @Startup
+@Singleton
 public class Temp {
-	
-	EntityDao dao = new EntityDao();
+	@EJB
+	EntityDao dao;
 	
 	@PostConstruct
-	private void createData() {
+	public void createData() {
 		//Address address = new Address("Norway", "Bergen", "Nordåsvegen 66", 5235);
 		//Bid bid = new Bid(145.55, "Kevin294");
 		//Feedback feedback = new Feedback(4.5,"Kevin294","This dude is the real shit" );
-		Product product = new Product("Titanium Rolex 2017 Model F", "Accessory", "Watch");
-		User user = new User("Kevin294", "Kevin", "Arnesen", "kevin@gmail.com", 12345678);
-		Auction auction = new Auction(product, user);
+		//Product product = new Product("Titanium Rolex 2017 Model F", "Accessory", "Watch");
+		//User user = new User("Kevin294", "Kevin", "Arnesen", "kevin@gmail.com", 12345678);
+		Auction auction = new Auction("balle", "aande");
 
 		
 		//dao.persist(address);
 		//dao.persist(bid);
 		//dao.persist(feedback);
-		dao.persist(product);
-		dao.persist(user);
+		//dao.persist(product);
+		//dao.persist(user);
 		dao.persist(auction);
 		
 
 
 	}
 	
-}*/
+}

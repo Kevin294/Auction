@@ -15,25 +15,25 @@ public class Feedback {
 	@Column(name="stars")
 	private double stars;
 	
-	@Column(name="user")
-	private String username;
+	@Column(name="navn")
+	private String navn;
 	
 	@Column(name = "message")
 	private String message;
 	
-
+	/*
 	@ManyToOne
 	@JoinColumn(name = "username")
 	private User user;
-
+	*/
 	
 	public Feedback() {
 		
 	}
 	
-	public Feedback(double stars, String username, String message) {
+	public Feedback(double stars, String navn, String message) {
 		this.stars = stars;
-		this.username = username;
+		this.navn = navn;
 		this.message = message;
 		
 	}
@@ -54,15 +54,15 @@ public class Feedback {
 	public void setStars(double stars) {
 		this.stars = stars;
 	}
-
-	public String getUsername() {
-		return username;
-	}
-
-	public void setUsername(String username) {
-		this.username = username;
-	}
 	
+	public String getNavn() {
+		return navn;
+	}
+
+	public void setNavn(String navn) {
+		this.navn = navn;
+	}
+
 	public String getMessage() {
 		return message;
 	}
