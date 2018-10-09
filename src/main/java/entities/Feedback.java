@@ -9,7 +9,7 @@ public class Feedback {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(name = "id")
+	@Column(name = "feedbackId")
 	private Integer id;
 	
 	@Column(name="stars")
