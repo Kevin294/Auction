@@ -28,16 +28,23 @@ public class Auction implements Serializable{
 	public static final String FIND_ALL = "Auction.findAll";
 /*
 	@OneToOne
-	@JoinColumn(name = "product")
+	@JoinColumn(name = "product_id")
 	private Product product;
 
 	@OneToOne
-	@JoinColumn(name = "user")
+	@JoinColumn(name = "username")
 	private User user;
 
 */
 	public Auction() {
 	}
+	
+	/*
+	 public Auction(User user, Product product){
+	 	this.user = user;
+	 	this.product = product;
+	 }
+	 */
 
 	public Auction(String etNavn, String enTing) {
 		this.etNavn = etNavn;

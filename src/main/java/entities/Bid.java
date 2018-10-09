@@ -19,23 +19,20 @@ public class Bid implements Serializable{
 	@Column(name = "value")
 	private double value;
 
-	@Column(name = "username")
-	private String username;
+	@Column(name = "owner")
+	private String owner;
 /*
 	@ManyToOne
-	@JoinColumn(name = "id")
+	@JoinColumn(name = "auction_id")
 	private Auction auction;
-	public Bid() {
-
-	}
 */
 	public Bid() {
 		
 	}
 	
-	public Bid(double value, String username) {
+	public Bid(double value, String owner) {
 		this.value = value;
-		this.username = username;
+		this.owner = owner;
 	}
 
 	public Integer getId() {
@@ -54,12 +51,12 @@ public class Bid implements Serializable{
 		this.value = value;
 	}
 
-	public String getUsername() {
-		return username;
+	public String getOwner() {
+		return owner;
 	}
 
-	public void setUsername(String username) {
-		this.username = username;
+	public void setOwner(String owner) {
+		this.owner = owner;
 	}
 
 }
