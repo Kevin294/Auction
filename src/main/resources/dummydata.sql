@@ -1,0 +1,1 @@
+INSERT INTO public.address(address_id, addressss, areacode, city, country) VALUES (1, 'sleipner', 5221, 'bergen', 'norway');
