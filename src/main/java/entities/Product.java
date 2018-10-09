@@ -13,7 +13,7 @@ public class Product implements Serializable{
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(name = "id")
+	@Column(name = "productId")
 	private Integer id;
 
 	@Column(name = "description")
