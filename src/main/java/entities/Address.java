@@ -14,7 +14,7 @@ public class Address implements Serializable {
 	@Column(name="address_id")
 	private Integer id;
 	
-	@Column(name="address")
+	@Column(name="addressss")
 	private String address;
 	
 	@Column(name="country")

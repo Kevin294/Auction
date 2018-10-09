@@ -36,6 +36,18 @@ public class Auction implements Serializable{
 	@JoinColumn(name ="bid_id")
 	private Bid bid;
 
+
+	public Auction() {
+	}
+	
+	
+	 public Auction(User user, Product product, Bid bid){
+	 	this.user = user;
+	 	this.product = product;
+	 	this.bid = bid;
+	 }
+	
+	
 	public Product getProduct() {
 		return product;
 	}
@@ -59,19 +71,6 @@ public class Auction implements Serializable{
 	public void setBid(Bid bid) {
 		this.bid = bid;
 	}
-
-	public Auction() {
-	}
-	
-	/*
-	 public Auction(User user, Product product){
-	 	this.user = user;
-	 	this.product = product;
-	 }
-	 */
-
-	
-
 
 	public Integer getId() {
 		return id;
