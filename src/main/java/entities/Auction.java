@@ -19,7 +19,7 @@ public class Auction implements Serializable{
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(name = "auctionId")
+	@Column(name = "auction_id")
 	private Integer id;
 	
 	private String enTing;

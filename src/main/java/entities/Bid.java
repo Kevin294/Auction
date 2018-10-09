@@ -13,7 +13,7 @@ public class Bid implements Serializable{
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(name = "bidId")
+	@Column(name = "bid_id")
 	private Integer id;
 
 	@Column(name = "value")
