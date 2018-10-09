@@ -22,7 +22,7 @@ public class Temp {
 		//Feedback feedback = new Feedback(4.5,"Kevin294","This dude is the real shit" );
 		//Product product = new Product("Titanium Rolex 2017 Model F", "Accessory", "Watch");
 		//User user = new User("Kevin294", "Kevin", "Arnesen", "kevin@gmail.com", 12345678);
-		Auction auction = new Auction("balle", "aande");
+		//Auction auction = new Auction("balle", "aande");
 
 		
 		//dao.persist(address);
@@ -30,7 +30,7 @@ public class Temp {
 		//dao.persist(feedback);
 		//dao.persist(product);
 		//dao.persist(user);
-		dao.persist(auction);
+		//dao.persist(auction);
 		
 
 

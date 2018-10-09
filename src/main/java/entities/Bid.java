@@ -21,11 +21,11 @@ public class Bid implements Serializable{
 
 	@Column(name = "owner")
 	private String owner;
-/*
+
 	@ManyToOne
 	@JoinColumn(name = "auction_id")
 	private Auction auction;
-*/
+
 	public Bid() {
 		
 	}

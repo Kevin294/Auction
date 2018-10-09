@@ -16,8 +16,8 @@ public class Test {
 	public static void main(String[] args) {
 		 factory = Persistence.createEntityManagerFactory(PERSISTENCE_UNIT_NAME);
 	        EntityManager em = factory.createEntityManager();
-	        Auction auction = new Auction("sivert", "kaffe");
-	        em.persist(auction);
+	       // Auction auction = new Auction("sivert", "kaffe");
+	      //  em.persist(auction);
 	        Query q = em.createQuery("select s from Tweet s");
 	        @SuppressWarnings("unchecked")
 			List<Auction> auctions = q.getResultList();

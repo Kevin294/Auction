@@ -26,19 +26,19 @@ public class User implements Serializable{
 	
 	@Column(name="phone")
 	private Integer phone;
-/*	
-	@OneToMany
-	@JoinColumn(name="product_id")
-	private List<Product> products;
 	
 	@OneToOne
 	@JoinColumn(name="address_id")
 	private Address address;
 	
 	@OneToMany
-	@JoinColumn(name="feedback_ id")
+	@JoinColumn(name="feedback_id")
 	private List<Feedback> feedback;
-	*/
+	
+	@OneToMany
+	@JoinColumn(name="auction_id")
+	private List<Auction> auction;
+	
 	public User() {
 		
 	}

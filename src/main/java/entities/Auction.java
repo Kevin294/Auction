@@ -22,11 +22,8 @@ public class Auction implements Serializable{
 	@Column(name = "auction_id")
 	private Integer id;
 	
-	private String enTing;
-	private String etNavn;
-	
 	public static final String FIND_ALL = "Auction.findAll";
-/*
+
 	@OneToOne
 	@JoinColumn(name = "product_id")
 	private Product product;
@@ -35,51 +32,10 @@ public class Auction implements Serializable{
 	@JoinColumn(name = "username")
 	private User user;
 
-*/
-	public Auction() {
-	}
-	
-	/*
-	 public Auction(User user, Product product){
-	 	this.user = user;
-	 	this.product = product;
-	 }
-	 */
+	@OneToOne
+	@JoinColumn(name ="bid_id")
+	private Bid bid;
 
-	public Auction(String etNavn, String enTing) {
-		this.etNavn = etNavn;
-		this.enTing = enTing;
-		
-
-
-	}
-
-
-	public Integer getId() {
-		return id;
-	}
-
-	public void setId(Integer id) {
-		this.id = id;
-	}
-
-	public String getEnTing() {
-		return enTing;
-	}
-
-	public void setEnTing(String enTing) {
-		this.enTing = enTing;
-	}
-
-	public String getEtNavn() {
-		return etNavn;
-	}
-
-	public void setEtNavn(String etNavn) {
-		this.etNavn = etNavn;
-	}
-	
-/*
 	public Product getProduct() {
 		return product;
 	}
@@ -95,15 +51,36 @@ public class Auction implements Serializable{
 	public void setUser(User user) {
 		this.user = user;
 	}
-	*/
 
-/*
-	public List<Bid> getBids() {
-		return bids;
+	public Bid getBid() {
+		return bid;
 	}
 
-	public void setBids(List<Bid> bids) {
-		this.bids = bids;
+	public void setBid(Bid bid) {
+		this.bid = bid;
 	}
-*/
+
+	public Auction() {
+	}
+	
+	/*
+	 public Auction(User user, Product product){
+	 	this.user = user;
+	 	this.product = product;
+	 }
+	 */
+
+	
+
+
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
+
+
+
 }
