@@ -20,11 +20,7 @@ public class User implements Serializable{
 	
 	@Column(name="lastname")
 	private String lastname;
-/*	
-	@OneToOne
-	@JoinColumn(name="address_id")
-	private Address address;
-*/	
+
 	@Column(name="email")
 	private String email;
 	
@@ -35,9 +31,12 @@ public class User implements Serializable{
 	@JoinColumn(name="product_id")
 	private List<Product> products;
 	
+	@OneToOne
+	@JoinColumn(name="address_id")
+	private Address address;
 	
 	@OneToMany
-	@JoinColumn(name="feedback_id")
+	@JoinColumn(name="feedback_ id")
 	private List<Feedback> feedback;
 	*/
 	public User() {
