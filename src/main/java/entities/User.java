@@ -27,29 +27,31 @@ public class User implements Serializable{
 	@Column(name="phone")
 	private Integer phone;
 	
+	@Column(name="password")
+	private String password;
+	
 	@OneToOne
 	@JoinColumn(name="address_id")
 	private Address address;
 	
-	@OneToMany
-	@JoinColumn(name="feedback_id")
+	@OneToMany(mappedBy = "user")
 	private List<Feedback> feedback;
 	
-	@OneToMany
-	@JoinColumn(name="auction_id")
+	@OneToMany(mappedBy = "user")
 	private List<Auction> auction;
 	
 	public User() {
 		
 	}
 	
-	public User(String username, String firstname, String lastname, Address address, String email, Integer phone) {
+	public User(String username, String firstname, String lastname, Address address, String email, Integer phone, String password) {
 		this.username = username;
 		this.firstname = firstname;
 		this.lastname = lastname;
 		this.address = address;
 		this.email = email;
 		this.phone = phone;
+		this.password = password;
 		
 	}
 
@@ -76,15 +78,7 @@ public class User implements Serializable{
 	public void setLastname(String lastname) {
 		this.lastname = lastname;
 	}
-/*
-	public Address getAddress() {
-		return address;
-	}
 
-	public void setAddress(Address address) {
-		this.address = address;
-	}
-*/
 	public String getEmail() {
 		return email;
 	}
@@ -101,5 +95,36 @@ public class User implements Serializable{
 		this.phone = phone;
 	}
 
-	
+	public Address getAddress() {
+		return address;
+	}
+
+	public void setAddress(Address address) {
+		this.address = address;
+	}
+
+	public List<Feedback> getFeedback() {
+		return feedback;
+	}
+
+	public void setFeedback(List<Feedback> feedback) {
+		this.feedback = feedback;
+	}
+
+	public List<Auction> getAuction() {
+		return auction;
+	}
+
+	public void setAuction(List<Auction> auction) {
+		this.auction = auction;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
 }

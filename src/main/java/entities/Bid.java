@@ -16,16 +16,16 @@ public class Bid implements Serializable{
 	@Column(name = "bid_id")
 	private Integer id;
 
-	@Column(name = "value")
+	@Column(name = "bidvalue")
 	private double value;
 
 	@Column(name = "owner")
 	private String owner;
-
+/*
 	@ManyToOne
 	@JoinColumn(name = "auction_id")
 	private Auction auction;
-
+*/
 	public Bid() {
 		
 	}

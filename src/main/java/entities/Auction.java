@@ -28,7 +28,7 @@ public class Auction implements Serializable{
 	@JoinColumn(name = "product_id")
 	private Product product;
 
-	@OneToOne
+	@ManyToOne
 	@JoinColumn(name = "username")
 	private User user;
 
@@ -36,6 +36,8 @@ public class Auction implements Serializable{
 	@JoinColumn(name ="bid_id")
 	private Bid bid;
 
+	@Column(name = "active")
+	private boolean active;
 
 	public Auction() {
 	}
@@ -78,6 +80,16 @@ public class Auction implements Serializable{
 
 	public void setId(Integer id) {
 		this.id = id;
+	}
+
+
+	public boolean isActive() {
+		return active;
+	}
+
+
+	public void setActive(boolean active) {
+		this.active = active;
 	}
 
 

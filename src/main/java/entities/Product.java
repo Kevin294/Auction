@@ -19,23 +19,23 @@ public class Product implements Serializable{
 	@Column(name = "description")
 	private String description;
 
-	@Column(name = "categori")
-	private String categori;
+	@Column(name = "category")
+	private String category;
 
 	@Column(name = "name")
 	private String name;
-
+/*
 	@OneToOne
 	@JoinColumn(name = "auction_id")
 	private Auction auction;
-
+*/
 	public Product() {
 
 	}
 
 	public Product(String description, String categori, String name) {
 		this.description = description;
-		this.categori = categori;
+		this.category = categori;
 		this.name = name;
 	}
 
@@ -55,12 +55,12 @@ public class Product implements Serializable{
 		this.description = description;
 	}
 
-	public String getCategori() {
-		return categori;
+	public String getCategory() {
+		return category;
 	}
 
-	public void setCategori(String categori) {
-		this.categori = categori;
+	public void setCategory(String category) {
+		this.category = category;
 	}
 
 	public String getName() {
@@ -70,13 +70,5 @@ public class Product implements Serializable{
 	public void setName(String name) {
 		this.name = name;
 	}
-/*
-	public User getUser() {
-		return user;
-	}
 
-	public void setUser(User user) {
-		this.user = user;
-	}
-*/
 }

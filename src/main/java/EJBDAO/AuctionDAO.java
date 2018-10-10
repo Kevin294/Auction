@@ -1,4 +1,4 @@
-package ejb;
+package EJBDAO;
 
 import java.util.List;
 
