@@ -16,8 +16,8 @@ public class SoapService {
 	AddressDAO a;
 	
 	@WebMethod(operationName = "GetAuction")
-	public Address getAuction (int id) {
+	public String getAuction (int id) {
 		
-		return a.getAddressById(id);
+		return a.getAddressById(id).getCity();
 	}
 }
