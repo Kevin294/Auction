@@ -36,6 +36,13 @@ public class Feedback {
 		
 	}
 
+	public Feedback(double stars, String navn, String message, User user) {
+		this.stars = stars;
+		this.navn = navn;
+		this.message = message;
+		this.user = user;
+	}
+	
 	public User getUser() {
 		return user;
 	}

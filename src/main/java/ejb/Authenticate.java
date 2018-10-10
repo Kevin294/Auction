@@ -23,6 +23,9 @@ public class Authenticate {
 	
 	public boolean authenticate(String username, String password) {
 		User user = dao.getUserById(username);
+		if(user == null) {
+			return false;
+		}
 		if(user.getUsername().equals(username) && user.getPassword().equals(password)) {
 			return true;
 		}else {
