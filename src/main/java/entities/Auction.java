@@ -29,7 +29,6 @@ public class Auction implements Serializable{
 	@JoinColumn(name = "product_id")
 	private Product product;
 	
-	@XmlTransient
 	@ManyToOne(optional = true, cascade = CascadeType.ALL)
 	@JoinColumn(name = "username")
 	private User user;
@@ -51,7 +50,7 @@ public class Auction implements Serializable{
 	 	this.bid = bid;
 	 }
 	
-	
+	@XmlTransient
 	public Product getProduct() {
 		return product;
 	}
@@ -59,7 +58,8 @@ public class Auction implements Serializable{
 	public void setProduct(Product product) {
 		this.product = product;
 	}
-
+	
+	@XmlTransient
 	public User getUser() {
 		return user;
 	}
@@ -67,7 +67,8 @@ public class Auction implements Serializable{
 	public void setUser(User user) {
 		this.user = user;
 	}
-
+	
+	@XmlTransient
 	public Bid getBid() {
 		return bid;
 	}

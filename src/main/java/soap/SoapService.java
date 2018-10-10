@@ -4,7 +4,7 @@ import javax.ejb.EJB;
 import javax.jws.WebMethod;
 import javax.jws.WebService;
 
-import EJBDAO.AddressDAO;
+import EJBDAO.AuctionDAO;
 import entities.Product;
 import entities.Address;
 import entities.Auction;
@@ -15,11 +15,11 @@ import entities.User;
 public class SoapService {
 	
 	@EJB
-	AddressDAO a;
+	AuctionDAO a;
 	
 	@WebMethod(operationName = "GetAuction")
-	public Address getAuction (int id) {
+	public Auction getAuction (int id) {
 		
-		return a.getAddressById(id);
+		return a.getAuctionById(id);
 	}
 }

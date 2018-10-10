@@ -35,8 +35,10 @@ public class User implements Serializable{
 	@JoinColumn(name="address_id")
 	private Address address;
 	
+	
 	@OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
 	private List<Feedback> feedback;
+	
 	
 	@OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
 	private List<Auction> auction;
@@ -95,7 +97,8 @@ public class User implements Serializable{
 	public void setPhone(Integer phone) {
 		this.phone = phone;
 	}
-
+	
+	@XmlTransient
 	public Address getAddress() {
 		return address;
 	}
@@ -103,7 +106,8 @@ public class User implements Serializable{
 	public void setAddress(Address address) {
 		this.address = address;
 	}
-
+	
+	@XmlTransient
 	public List<Feedback> getFeedback() {
 		return feedback;
 	}
@@ -111,7 +115,8 @@ public class User implements Serializable{
 	public void setFeedback(List<Feedback> feedback) {
 		this.feedback = feedback;
 	}
-
+	
+	@XmlTransient
 	public List<Auction> getAuction() {
 		return auction;
 	}

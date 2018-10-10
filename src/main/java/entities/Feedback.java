@@ -22,7 +22,6 @@ public class Feedback {
 	@Column(name = "message")
 	private String message;
 	
-	@XmlTransient
 	@ManyToOne
 	@JoinColumn(name = "username")
 	private User user;
@@ -45,6 +44,7 @@ public class Feedback {
 		this.user = user;
 	}
 	
+	@XmlTransient
 	public User getUser() {
 		return user;
 	}
