@@ -1,5 +1,7 @@
 package ejb;
 
+import java.util.List;
+
 import javax.ejb.EJB;
 import javax.ejb.Stateless;
 
@@ -34,5 +36,9 @@ public class HandleAuctions {
 		Auction auc = auctiondao.getAuctionById(auction.getId());
 		auc.setActive(false);
 		return userdao.getUserById(auc.getBid().getOwner());
+	}
+	
+	public List<Auction> getActiveAuctions(){
+		return auctiondao.getAllActiveAuctions();
 	}
 }

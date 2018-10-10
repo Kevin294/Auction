@@ -41,4 +41,10 @@ public class AuctionDAO {
 	public void removeAuction(Auction auction) {
 		em.remove(auction);
 	}
+	
+	@SuppressWarnings("unchecked")
+	public List<Auction> getAllActiveAuctions(){
+		Query query = em.createQuery("SELECT t FROM auction t WHERE t.active=true", Auction.class);
+		return query.getResultList();
+	}
 }
