@@ -1,4 +1,4 @@
-package ejb;
+package EJBDAO;
 
 import java.util.List;
 
@@ -29,7 +29,7 @@ public class UserDAO {
 		em.merge(user);
 	}
 
-	public User getUserById(Integer id) {
+	public User getUserById(String id) {
 		return em.find(User.class, id);
 	}
 

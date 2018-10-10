@@ -1,4 +1,4 @@
-package ejb;
+package EJBDAO;
 
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
