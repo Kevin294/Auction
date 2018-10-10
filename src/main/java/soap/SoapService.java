@@ -1,5 +1,7 @@
 package soap;
 
+import java.util.List;
+
 import javax.ejb.EJB;
 import javax.jws.WebMethod;
 import javax.jws.WebService;
@@ -21,5 +23,10 @@ public class SoapService {
 	public Auction getAuction (int id) {
 		
 		return a.getAuctionById(id);
+	}
+	
+	@WebMethod(operationName = "GetActiveAuctions")
+	public List<Auction> getActiveAuctions(){
+		return a.getAllActiveAuctions();
 	}
 }
