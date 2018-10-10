@@ -2,6 +2,7 @@ package entities;
 
 
 import javax.persistence.*;
+import javax.xml.bind.annotation.XmlTransient;
 
 @Entity
 @Table(name = "feedback")
@@ -21,6 +22,7 @@ public class Feedback {
 	@Column(name = "message")
 	private String message;
 	
+	@XmlTransient
 	@ManyToOne
 	@JoinColumn(name = "username")
 	private User user;

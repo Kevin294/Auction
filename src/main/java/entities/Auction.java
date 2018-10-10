@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.util.List;
 import javax.persistence.*;
 import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlTransient;
 
 import entities.User;
 import entities.Product;
@@ -27,8 +28,9 @@ public class Auction implements Serializable{
 	@OneToOne
 	@JoinColumn(name = "product_id")
 	private Product product;
-
-	@ManyToOne
+	
+	@XmlTransient
+	@ManyToOne(optional = true, cascade = CascadeType.ALL)
 	@JoinColumn(name = "username")
 	private User user;
 

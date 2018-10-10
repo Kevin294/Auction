@@ -3,6 +3,7 @@ package entities;
 import java.io.Serializable;
 
 import javax.persistence.*;
+import javax.xml.bind.annotation.XmlTransient;
 
 @Entity
 @Table(name = "bid", schema = "public")
@@ -21,11 +22,12 @@ public class Bid implements Serializable{
 
 	@Column(name = "owner")
 	private String owner;
-/*
+
+	@XmlTransient
 	@ManyToOne
 	@JoinColumn(name = "auction_id")
 	private Auction auction;
-*/
+
 	public Bid() {
 		
 	}

@@ -4,3 +4,4 @@ INSERT INTO public.users(username, email, firstname, lastname, phone, password, 
 INSERT INTO public.bid(bid_id, owner, bidvalue) VALUES (1,'kevin294',50.0);
 INSERT INTO public.auction(auction_id, bid_id, product_id, username, active) VALUES (1, 1, 1, 'kevin294', true);
 INSERT INTO public.feedback(feedback_id, message, navn, stars, username) VALUES (1,'Great guy', 'navn', 4.5, 'kevin294');
+INSERT INTO public.thetest(testing, tester) VALUES ('forste', 'andre');

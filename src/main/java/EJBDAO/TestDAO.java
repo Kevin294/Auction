@@ -26,7 +26,7 @@ public class TestDAO {
 	
 	@SuppressWarnings("unchecked")
 	public List<TestEntity> getAllTestEntities(){
-		Query query = em.createQuery("SELECT t FROM testing t", TestEntity.class);
+		Query query = em.createQuery("SELECT t FROM thetest t", TestEntity.class);
 		return query.getResultList();
 	}
 }

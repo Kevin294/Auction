@@ -24,11 +24,11 @@ public class Product implements Serializable{
 
 	@Column(name = "name")
 	private String name;
-/*
+
 	@OneToOne
 	@JoinColumn(name = "auction_id")
 	private Auction auction;
-*/
+
 	public Product() {
 
 	}
