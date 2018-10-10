@@ -33,7 +33,7 @@ public class AuctionDAO {
 
 	@SuppressWarnings("unchecked")
 	public List<Auction> getAllAuctions() {
-		Query query = em.createQuery("SELECT t FROM auction t", Auction.class);
+		Query query = em.createQuery("SELECT t FROM Auction t", Auction.class);
 		return query.getResultList();
 
 	}
@@ -44,7 +44,7 @@ public class AuctionDAO {
 	
 	@SuppressWarnings("unchecked")
 	public List<Auction> getAllActiveAuctions(){
-		Query query = em.createQuery("SELECT t FROM auction t WHERE t.active=true", Auction.class);
+		Query query = em.createQuery("SELECT e FROM Auction e WHERE e.active = TRUE", Auction.class);
 		return query.getResultList();
 	}
 }
