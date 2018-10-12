@@ -1,5 +1,6 @@
 package soap;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.ejb.EJB;
@@ -49,9 +50,18 @@ public class SoapService {
 		}
 	}
 	
-	@WebMethod(operationName = "GetAuctionInformation")
+	@WebMethod(operationName = "GetAuctionInformationById")
 	public String getAuctionInformation (int id) {
 		Auction temp = a.getAuctionById(id);
 		return "Id:"+temp.getId().toString()+" Name:"+temp.getProduct().getName() +" Current bid:"+temp.getBid().getValue().toString();
+	}
+	
+	@WebMethod(operationName ="GetAuctionsWithInformation")
+	public List<String> getAuctionsWithInformation(){
+		List<String> result = new ArrayList<String>();
+		for(Auction temp : a.getAllAuctions()) {
+			result.add("Id:"+temp.getId().toString()+" Name:"+temp.getProduct().getName() +" Current bid:"+temp.getBid().getValue().toString());
+		}
+		return result;
 	}
 }
