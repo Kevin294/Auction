@@ -48,4 +48,10 @@ public class SoapService {
 			return false;
 		}
 	}
+	
+	@WebMethod(operationName = "GetAuctionInformation")
+	public String getAuctionInformation (int id) {
+		Auction temp = a.getAuctionById(id);
+		return "Id:"+temp.getId().toString()+" Name:"+temp.getProduct().getName() +" Current bid:"+temp.getBid().getValue().toString();
+	}
 }
