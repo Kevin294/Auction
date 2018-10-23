@@ -50,7 +50,6 @@ public class Auction implements Serializable{
 	 	this.bid = bid;
 	 }
 	
-	@XmlTransient
 	public Product getProduct() {
 		return product;
 	}
