@@ -31,7 +31,7 @@ public class User implements Serializable{
 	@Column(name="password")
 	private String password;
 	
-	@OneToOne
+	@OneToOne(cascade = CascadeType.PERSIST)
 	@JoinColumn(name="address_id")
 	private Address address;
 	

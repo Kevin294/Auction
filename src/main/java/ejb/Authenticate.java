@@ -4,6 +4,7 @@ import javax.ejb.EJB;
 import javax.ejb.Stateless;
 
 import EJBDAO.UserDAO;
+import entities.Address;
 import entities.User;
 
 @Stateless
@@ -30,6 +31,15 @@ public class Authenticate {
 			return user;
 		}else {
 			return null;
+		}
+	}
+	
+	public boolean validateUsername(String username) {
+		User temp = dao.getUserById(username);
+		if(temp == null) {
+			return true;
+		} else {
+			return false;
 		}
 	}
 }

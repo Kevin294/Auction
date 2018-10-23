@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pageflow:Pageflow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf15403064073930" configfile="/DAT250Auction/src/main/webapp/faces-config.xml">
+  <nodes xsi:type="pageflow:PFPage" name="login.xhtml" id="pf15403065336424" referenceLink="//@navigationRule.0/@fromViewId|" outlinks="pf15403065336425" path="/login.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="auction.xhtml" id="pf15403065336426" referenceLink="//@navigationRule.1/@navigationCase.0/@toViewId|" inlinks="pf15403065336425 pf15403065336427" path="/auction.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="register.xhtml" id="pf15403065336428" referenceLink="//@navigationRule.1/@fromViewId|" outlinks="pf15403065336427" path="/register.xhtml"/>
+  <links id="pf15403065336425" target="pf15403065336426" source="pf15403065336424" outcome="loggedin"/>
+  <links id="pf15403065336427" target="pf15403065336426" source="pf15403065336428" outcome="loggedin"/>
+</pageflow:Pageflow>
