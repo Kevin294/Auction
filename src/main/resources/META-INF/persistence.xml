@@ -12,8 +12,8 @@ http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
    	 <class>entities.Bid</class>
    	 <class>entities.Feedback</class>
    	 <class>entities.Product</class>
-   	 <class>entities.User</class>
    	 <class>entities.TestEntity</class>
+   	 <class>entities.User</class>
 	 <properties>
 	 	<property name="javax.persistence.schema-generation.database.action" value="drop-and-create"/>
 	 	<property name="javax.persistence.sql-load-script-source" value="dummydata.sql"/>
