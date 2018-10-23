@@ -19,7 +19,7 @@ import entities.User;
 @SessionScoped
 public class Register {
 	@EJB
-	Authenticate auth;
+	Authenticate auth; 
 
 	private String username;
 	private String firstname;
