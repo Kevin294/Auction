@@ -21,15 +21,15 @@ public class Authenticate {
 		}
 	}
 	
-	public boolean authenticate(String username, String password) {
+	public User authenticate(String username, String password) {
 		User user = dao.getUserById(username);
 		if(user == null) {
-			return false;
+			return null;
 		}
 		if(user.getUsername().equals(username) && user.getPassword().equals(password)) {
-			return true;
+			return user;
 		}else {
-			return false;
+			return null;
 		}
 	}
 }

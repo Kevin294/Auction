@@ -1,11 +1,16 @@
 <html lang="en"
       xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://java.sun.com/jsf/html">
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
     <h:head>
-        <title>Facelets Hello World</title>
+        <title>Login</title>
     </h:head>
     <h:body>
-    	<p> please </p>
-        #{hello.world}
+    <h:form>
+    	Username: <h:inputText value="#{login.username}" required = "true" /><br/>
+    	Password: <h:inputText value="#{login.password}" required = "true" /><br/>
+    	<h:commandButton value="login" action ="#{login.submit}" />
+    	<h:messages />
+    </h:form>
     </h:body>
 </html>
