@@ -1,0 +1,24 @@
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Register</title>
+    </h:head>
+    <h:body>
+    <h:form>
+    	Username: <h:inputText value="#{register.username}" required = "true" /><br/>
+    	Password: <h:inputText value="#{register.password}" required = "true" /><br/>
+    	Firstname: <h:inputText value="#{register.firstname}" required = "true" /><br/>
+    	Lastname: <h:inputText value="#{register.lastname}" required = "true" /><br/>
+    	Email: <h:inputText value="#{register.email}" required = "true" /><br/>
+    	Phone: <h:inputText value="#{register.phone}" required = "true" /><br/>
+       	Address: <h:inputText value="#{register.address}" required = "true" /><br/>
+    	Country: <h:inputText value="#{register.country}" required = "true" /><br/>
+       	City: <h:inputText value="#{register.city}" required = "true" /><br/>
+    	Areacode: <h:inputText value="#{register.areacode}" required = "true" /><br/>
+    	<h:commandButton value="Register" action ="#{register.submit}" />
+    	<h:messages />
+    </h:form>
+    </h:body>
+</html>
