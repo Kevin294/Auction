@@ -7,15 +7,30 @@
 	<title>Auction</title>
 </h:head>
 <h:body>
-	<h:dataTable value="#{auctionBean.auctions}" var="auction">
+	<h:dataTable value="#{auctionBean.auctions}" var="auction" rules ="all" frame="border">
 		<h:column>
-			#{auction.product.id}
-		</h:column>
-		<h:column>
+			<f:facet name="header">Productname</f:facet>
 			#{auction.product.name}
 		</h:column>
 		<h:column>
+			<f:facet name="header">Category</f:facet>
+			#{auction.product.category}
+		</h:column>
+		<h:column>
+			<f:facet name="header">Product description</f:facet>
+			#{auction.product.description}
+		</h:column>
+		<h:column>
+			<f:facet name="header">Current bid</f:facet>
 			#{auction.bid.value}
+		</h:column>
+		<h:column>
+			<f:facet name="header">Seller name</f:facet>
+			#{auction.user.username}
+		</h:column>
+		<h:column>
+			<f:facet name="header">Seller rating</f:facet>
+			#{auction.user.rating}
 		</h:column>
 		<h:column>
 			<h:form>
@@ -40,10 +55,14 @@
 			</h:form>
 		</h:column>
 	</h:dataTable>
-	<h:link value="Create a new auction" outcome="createnewauction"/><br/>
-	<h:link value="Your wins" outcome="auctionlist"/><br/>
+	<h:link value="Create a new auction" outcome="createnewauction" />
+	<br />
+	<h:link value="Your wins" outcome="auctionlist" />
+	<br />
+	<h:link value="Your auctions" outcome="yourauctions" />
+	<br />
 	<h:form>
-	<h:commandButton value="Log out" action="#{login.logout}" />
+		<h:commandButton value="Log out" action="#{login.logout}" />
 	</h:form>
 </h:body>
 </html>

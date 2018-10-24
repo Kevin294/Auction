@@ -28,7 +28,7 @@ public class AuctionBean {
 	public List<Auction> auctions;
 
 	public List<Auction> getAuctions() {
-		auctions = auction.getAllAuctions();
+		auctions = auction.getAllActiveAuctions();
 		return auctions;
 	}
 

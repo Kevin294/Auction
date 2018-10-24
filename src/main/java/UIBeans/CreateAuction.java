@@ -43,6 +43,7 @@ public class CreateAuction {
 		Auction newAuction = new Auction();
 		newAuction.setProduct(prod);
 		newAuction.setUser(user);
+		newAuction.setActive(true);
 		
 		try{
 			minimumBid = Double.parseDouble(minBid);

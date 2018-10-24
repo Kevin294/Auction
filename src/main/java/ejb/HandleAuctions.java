@@ -54,4 +54,14 @@ public class HandleAuctions {
 		}
 		return result;
 	}
+	
+	public List<Auction> getAuctionsByUser(String username){
+		List<Auction> result = new ArrayList<Auction>();
+		for (Auction e : auctiondao.getAllAuctions()){
+			if(e.getUser().getUsername().equals(username)){
+				result.add(e);
+			}
+		}
+		return result;
+	}
 }

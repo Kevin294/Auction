@@ -78,6 +78,54 @@
 	</navigation-rule>
 	
 	<navigation-rule>
+		<from-view-id>/yourauctions.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>auctions</from-outcome>
+			<to-view-id>/auction.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	
+	<navigation-rule>
+		<from-view-id>/auction.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>yourauctions</from-outcome>
+			<to-view-id>/yourauctions.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	
+	<navigation-rule>
+		<from-view-id>/yourauctions.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>viewuser</from-outcome>
+			<to-view-id>/viewuser.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	
+	<navigation-rule>
+		<from-view-id>/viewuser.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>yourauctions</from-outcome>
+			<to-view-id>/yourauctions.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	
+	<navigation-rule>
+		<from-view-id>/yourauctions.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>notloggedin</from-outcome>
+			<to-view-id>/index.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	
+	<navigation-rule>
+		<from-view-id>/yourauctions.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>login</from-outcome>
+			<to-view-id>/index.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	
+	<navigation-rule>
 		<from-view-id>/auctionlist.xhtml</from-view-id>
 		<navigation-case>
 			<from-outcome>auctions</from-outcome>
