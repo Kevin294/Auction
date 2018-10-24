@@ -62,6 +62,30 @@
 	</navigation-rule>
 	
 	<navigation-rule>
+		<from-view-id>/auctionlist.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>login</from-outcome>
+			<to-view-id>/index.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	
+	<navigation-rule>
+		<from-view-id>/auction.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>auctionlist</from-outcome>
+			<to-view-id>/auctionlist.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	
+	<navigation-rule>
+		<from-view-id>/auctionlist.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>auctions</from-outcome>
+			<to-view-id>/auction.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	
+	<navigation-rule>
 		<from-view-id>/createauction.xhtml</from-view-id>
 		<navigation-case>
 			<from-outcome>createdauction</from-outcome>

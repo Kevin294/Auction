@@ -41,6 +41,7 @@ public class Rate {
 			target.setRating(result);
 			target.setVotes(votes);;
 			userdao.updateUser(target);
+			return null;
 		}
 		context.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "Status: Not logged in", null));
 		return "notloggedin";
@@ -61,6 +62,14 @@ public class Rate {
 
 	public void setSelectedauction(Auction selectedauction) {
 		this.selectedauction = selectedauction;
+	}
+
+	public double getRating() {
+		return rating;
+	}
+
+	public void setRating(double rating) {
+		this.rating = rating;
 	}
 	
 }

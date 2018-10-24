@@ -15,19 +15,25 @@
 			#{auction.bid.value}
 		</h:column>
 		<h:column>
+			#{auction.user.rating}
+		</h:column>
+		<h:column>
 			<h:form>
 				<h:inputText value="#{rate.rating}" required="true">
 					<f:convertNumber type="number" />
 				</h:inputText>
 
-				<h:commandButton value="rating" action="#{rate.submit}"/>
+				<h:commandButton value="rating" action="#{rate.submit}">
+					<f:setPropertyActionListener target="#{rate.selectedauction}"
+						value="#{auction}" />
+				</h:commandButton>
 			</h:form>
 		</h:column>
-		
+
 	</h:dataTable>
-	<h:link value="Create a new auction" outcome="createnewauction"/>
+	<h:link value="Browse auctions" outcome="auctions" />
 	<h:form>
-	<h:commandButton value="Log out" action="#{login.logout}" />
+		<h:commandButton value="Log out" action="#{login.logout}" />
 	</h:form>
 </h:body>
 </html>
