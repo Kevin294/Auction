@@ -12,14 +12,19 @@ import entities.Auction;
 @SuppressWarnings("deprecation")
 @ManagedBean
 @SessionScoped
-public class Home {
+public class AuctionBean {
 	@EJB
 	AuctionDAO auction;
-	
-	public List<Auction> auctions; 
-	
+
+	public List<Auction> auctions;
+
 	public List<Auction> getAuctions() {
 		auctions = auction.getAllAuctions();
 		return auctions;
 	}
+
+	public String submit() {
+		return null;
+	}
+
 }

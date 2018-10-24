@@ -8,11 +8,19 @@
         <title>Login</title>
     </h:head>
     <h:body>
-    <h:dataTable value="#{home.auctions}" var="auction">
-    <h:column>
-        <h:link value="#{auction.product}" outcome="auction">
+    <h:dataTable value="#{auctionBean.auctions}" var="auction">
+    <h:column> 
+    	<h:link value="#{auction.product.id}" outcome="auction">
             <f:param name="id" value="#{auction.id}" />
         </h:link>
+        </h:column>
+        <h:column>
+        <h:link value="#{auction.product.name}" outcome="auction">
+            <f:param name="id" value="#{auction.id}" />
+        </h:link>
+    </h:column>
+    <h:column>
+   		<h:commandButton value="bid" action ="#{auctionBean.submit}" />
     </h:column>
 </h:dataTable>
     </h:body>
