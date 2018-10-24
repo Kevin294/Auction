@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pageflow:Pageflow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf15403835199062" configfile="/DAT250Auction/src/main/webapp/WEB-INF/faces-config.xml">
+  <nodes xsi:type="pageflow:PFPage" name="index.xhtml" x="122" y="178" id="pf15403835333553" referenceLink="//@navigationRule.4/@navigationCase.0/@toViewId|" outlinks="pf15403835333554 pf154038377887810" inlinks="pf15403835504789 pf154038431618811" path="/index.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="auction.xhtml" x="338" y="370" id="pf15403835333555" referenceLink="//@navigationRule.4/@fromViewId|" outlinks="pf15403835504789 pf154038431618811" inlinks="pf15403835333554 pf15403835333556" path="/auction.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="register.xhtml" x="122" y="562" id="pf15403835333558" referenceLink="//@navigationRule.4/@navigationCase.0/@toViewId|" outlinks="pf15403835333556" inlinks="pf154038377887810" path="/register.xhtml"/>
+  <links id="pf15403835333554" target="pf15403835333555" source="pf15403835333553" outcome="loggedin"/>
+  <links id="pf15403835333556" target="pf15403835333555" source="pf15403835333558" outcome="loggedin"/>
+  <links id="pf15403835504789" target="pf15403835333553" source="pf15403835333555" outcome="notloggedin"/>
+  <links id="pf154038377887810" target="pf15403835333558" source="pf15403835333553" outcome="register"/>
+  <links id="pf154038431618811" target="pf15403835333553" source="pf15403835333555" outcome="login"/>
+</pageflow:Pageflow>

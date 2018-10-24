@@ -29,12 +29,25 @@ public class Login {
 			status = true;
 			context.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "Status: "+auth.authenticate(username, password), null));
 			HttpSession session = (HttpSession) FacesContext.getCurrentInstance().getExternalContext().getSession(false);
-			session.setAttribute(username, user);
+			session.setAttribute("currentuser", user);
 			return "loggedin";
 		}else {
 			context.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "Status: "+auth.authenticate(username, password), null));
 			return null;
 		}
+	}
+	
+	public String logout() {
+		HttpSession session = (HttpSession) FacesContext.getCurrentInstance().getExternalContext().getSession(false);
+		FacesContext context = FacesContext.getCurrentInstance();
+		User user = (User) session.getAttribute("currentuser");
+		if (user != null) {
+			session.invalidate();
+			context.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "Status: Logged out", null));
+			return "login";
+		}
+		context.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "Status: Please login to logout:)", null));
+		return "login";
 	}
 	
 	public String getUsername() {
