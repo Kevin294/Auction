@@ -7,10 +7,7 @@
 	<title>Your wins</title>
 </h:head>
 <h:body>
-	<h:dataTable value="#{auctionBean.auctions}" var="auction">
-		<h:column>
-			#{auction.product.id}
-		</h:column>
+	<h:dataTable value="#{rate.auctions}" var="auction">
 		<h:column>
 			#{auction.product.name}
 		</h:column>
@@ -19,26 +16,14 @@
 		</h:column>
 		<h:column>
 			<h:form>
-				<h:inputText value="#{auctionBean.bidvalue}" required="true">
-					<f:convertNumber IntegerOnly="true" type="number" />
+				<h:inputText value="#{rate.rating}" required="true">
+					<f:convertNumber type="number" />
 				</h:inputText>
 
-				<h:commandButton value="bid" action="#{auctionBean.submit}">
-					<f:setPropertyActionListener
-						target="#{auctionBean.selectedauction}" value="#{auction}" />
-				</h:commandButton>
+				<h:commandButton value="rating" action="#{rate.submit}"/>
 			</h:form>
 		</h:column>
-		<h:column>
-			<h:form>
-				<h:commandButton value="End Auction"
-					action="#{auctionBean.endauction}"
-					rendered="#{auctionBean.username eq auction.user.username}">
-					<f:setPropertyActionListener
-						target="#{auctionBean.selectedauction}" value="#{auction}" />
-				</h:commandButton>
-			</h:form>
-		</h:column>
+		
 	</h:dataTable>
 	<h:link value="Create a new auction" outcome="createnewauction"/>
 	<h:form>
