@@ -47,4 +47,9 @@ public class AuctionDAO {
 		Query query = em.createQuery("SELECT e FROM Auction e WHERE e.active = TRUE", Auction.class);
 		return query.getResultList();
 	}
+
+	public List<Auction> getAllNonActiveAuctions() {
+		Query query = em.createQuery("SELE)
+		return null;
+	}
 }

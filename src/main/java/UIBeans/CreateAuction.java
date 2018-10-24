@@ -21,7 +21,8 @@ import entities.User;
 @ManagedBean
 @SessionScoped
 public class CreateAuction {
-	
+	@EJB
+	HandleAuctions handel;
 	private String prodName;
 	private String prodDescription;
 	private String prodCategory;
@@ -52,7 +53,7 @@ public class CreateAuction {
 			
 		}
 		
-		HandleAuctions handel = new HandleAuctions();
+		
 		handel.newAuction(newAuction, minimumBid, prod);
 		context.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR,
 				"Status: Your auction " + prodName + " was successful registered", null));

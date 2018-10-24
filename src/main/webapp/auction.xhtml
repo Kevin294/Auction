@@ -31,15 +31,18 @@
 		</h:column>
 		<h:column>
 			<h:form>
-				<h:commandButton value="End Auction" action="#{auctionBean.endauction}" rendered ="#{auctionBean.username eq auction.user.username}">
+				<h:commandButton value="End Auction"
+					action="#{auctionBean.endauction}"
+					rendered="#{auctionBean.username eq auction.user.username}">
 					<f:setPropertyActionListener
 						target="#{auctionBean.selectedauction}" value="#{auction}" />
 				</h:commandButton>
 			</h:form>
 		</h:column>
 	</h:dataTable>
+	<h:link value="Create a new auction" outcome="createnewauction"/>
 	<h:form>
-		<h:commandButton value="Log out" action="#{login.logout}" />
+	<h:commandButton value="Log out" action="#{login.logout}" />
 	</h:form>
 </h:body>
 </html>

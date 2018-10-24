@@ -29,7 +29,7 @@ public class Auction implements Serializable{
 	@JoinColumn(name = "product_id")
 	private Product product;
 	
-	@ManyToOne(optional = true, cascade = CascadeType.ALL)
+	@ManyToOne
 	@JoinColumn(name = "username")
 	private User user;
 

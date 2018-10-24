@@ -42,4 +42,10 @@ public class HandleAuctions {
 	public List<Auction> getActiveAuctions(){
 		return auctiondao.getAllActiveAuctions();
 	}
+	
+	public List<Auction> getAuctionsWon(String username){
+		List<Auction> temp = auctiondao.getAllNonActiveAuctions();
+			
+		
+	}
 }

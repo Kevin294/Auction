@@ -54,6 +54,14 @@
 	</navigation-rule>
 	
 	<navigation-rule>
+		<from-view-id>/auction.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>createnewauction</from-outcome>
+			<to-view-id>/createauction.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	
+	<navigation-rule>
 		<from-view-id>/createauction.xhtml</from-view-id>
 		<navigation-case>
 			<from-outcome>createdauction</from-outcome>
