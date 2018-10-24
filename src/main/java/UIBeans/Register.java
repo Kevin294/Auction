@@ -9,6 +9,7 @@ import javax.persistence.Column;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
+import javax.servlet.http.HttpSession;
 
 import ejb.Authenticate;
 import entities.Address;
@@ -40,6 +41,8 @@ public class Register {
 		if(auth.register(user))
 		{
 			context.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "Status: true", null));
+			HttpSession session = (HttpSession) FacesContext.getCurrentInstance().getExternalContext().getSession(false);
+			session.setAttribute(username, user);
 			return "loggedin";
 		}
 		context.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "Status: false", null));
