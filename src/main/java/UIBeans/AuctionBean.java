@@ -10,6 +10,7 @@ import javax.faces.context.FacesContext;
 import javax.servlet.http.HttpSession;
 
 import EJBDAO.AuctionDAO;
+import ejb.HandleAuctions;
 import entities.Auction;
 import entities.User;
 
@@ -19,11 +20,11 @@ import entities.User;
 public class AuctionBean {
 	@EJB
 	AuctionDAO auction;
+	@EJB
+	HandleAuctions ha;
 	String username;
 	Auction selectedauction;
-
 	double bidvalue;
-
 	public List<Auction> auctions;
 
 	public List<Auction> getAuctions() {
@@ -53,10 +54,21 @@ public class AuctionBean {
 
 	public String endauction() {
 		FacesContext context = FacesContext.getCurrentInstance();
-		context.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "Status: Failed", null));
-		return null;
+		HttpSession session = (HttpSession) FacesContext.getCurrentInstance().getExternalContext().getSession(false);
+		User user = (User) session.getAttribute("currentuser");
+		if (user != null) {
+			if (user.getUsername().equals(selectedauction.getUser().getUsername())) {
+				User winner = ha.endAuction(selectedauction);
+				context.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "Status: Success. Winner: "+winner.getUsername(), null));
+				return null;
+			}
+			context.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "Status: Failed", null));
+			return null;
+		}
+		context.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "Status: Not logged in", null));
+		return "notloggedin";
 	}
-	
+
 	public Auction getSelectedauction() {
 		return selectedauction;
 	}
@@ -74,7 +86,13 @@ public class AuctionBean {
 	}
 
 	public String getUsername() {
-		username = "kevin294";
+		HttpSession session = (HttpSession) FacesContext.getCurrentInstance().getExternalContext().getSession(false);
+		User user = (User) session.getAttribute("currentuser");
+		if (user != null) {
+			username = user.getUsername();
+		} else {
+			username = "";
+		}
 		return username;
 	}
 
