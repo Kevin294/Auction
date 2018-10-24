@@ -19,7 +19,7 @@ import entities.User;
 public class AuctionBean {
 	@EJB
 	AuctionDAO auction;
-
+	String username;
 	Auction selectedauction;
 
 	double bidvalue;
@@ -51,6 +51,12 @@ public class AuctionBean {
 		return "notloggedin";
 	}
 
+	public String endauction() {
+		FacesContext context = FacesContext.getCurrentInstance();
+		context.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "Status: Failed", null));
+		return null;
+	}
+	
 	public Auction getSelectedauction() {
 		return selectedauction;
 	}
@@ -65,6 +71,15 @@ public class AuctionBean {
 
 	public void setBidvalue(double bidvalue) {
 		this.bidvalue = bidvalue;
+	}
+
+	public String getUsername() {
+		username = "kevin294";
+		return username;
+	}
+
+	public void setUsername(String username) {
+		this.username = username;
 	}
 
 }
