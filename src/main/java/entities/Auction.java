@@ -25,7 +25,7 @@ public class Auction implements Serializable{
 	
 	public static final String FIND_ALL = "Auction.findAll";
 
-	@OneToOne
+	@OneToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "product_id")
 	private Product product;
 	
