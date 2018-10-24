@@ -19,10 +19,10 @@ public class HandleAuctions {
 	UserDAO userdao;
 	
 	public void newAuction(Auction auction, double minimumbid, Product product) {
-		//Bid bid = new Bid(minimumbid, auction.getUser().getUsername());
-		//auction.setBid(bid);
-		//auction.setProduct(product);
-		//auctiondao.addAuction(auction);
+		Bid bid = new Bid(minimumbid, auction.getUser().getUsername());
+		auction.setBid(bid);
+		auction.setProduct(product);
+		auctiondao.addAuction(auction);
 		
 	}
 	
@@ -35,6 +35,7 @@ public class HandleAuctions {
 	public User endAuction(Auction auction) {
 		Auction auc = auctiondao.getAuctionById(auction.getId());
 		auc.setActive(false);
+		auctiondao.updateAuction(auc);
 		return userdao.getUserById(auc.getBid().getOwner());
 	}
 	
