@@ -23,6 +23,9 @@ public class Authenticate {
 	}
 	
 	public User authenticate(String username, String password) {
+		if(username.isEmpty() || password.isEmpty()) {
+			return null;
+		}
 		User user = dao.getUserById(username);
 		if(user == null) {
 			return null;
@@ -35,6 +38,9 @@ public class Authenticate {
 	}
 	
 	public boolean validateUsername(String username) {
+		if(username.isEmpty()) {
+			return false;
+		}
 		User temp = dao.getUserById(username);
 		if(temp == null) {
 			return true;
