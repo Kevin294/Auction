@@ -1,0 +1,19 @@
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Create Auction</title>
+    </h:head>
+    <h:body>
+    <h:form>
+    	Product name: <h:inputText value="#{createAuction.prodName}" required = "true" /><br/>
+    	Product description: <h:inputText value="#{createAuction.prodDescription}" required = "true" /><br/>
+    	Product category: <h:inputText value="#{createAuction.prodCategory}" required = "true" /><br/>
+    	Minimum price: <h:inputText value="#{createAuction.minBid}" required = "true" /><br/>
+    	
+    	<h:commandButton value="Create auction" action ="#{createAuction.submit}" />
+    	<h:messages />
+    </h:form>
+    </h:body>
+</html>
