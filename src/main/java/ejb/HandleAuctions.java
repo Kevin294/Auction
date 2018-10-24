@@ -1,5 +1,6 @@
 package ejb;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.ejb.EJB;
@@ -45,7 +46,12 @@ public class HandleAuctions {
 	
 	public List<Auction> getAuctionsWon(String username){
 		List<Auction> temp = auctiondao.getAllNonActiveAuctions();
-			
-		
+		List<Auction> result = new ArrayList<Auction>();
+		for(Auction e: temp) {
+			if(!e.isActive() && username.equals(e.getBid().getOwner())) {
+				result.add(e);
+			}
+		}
+		return result;
 	}
 }

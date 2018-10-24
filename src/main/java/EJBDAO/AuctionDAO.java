@@ -48,8 +48,9 @@ public class AuctionDAO {
 		return query.getResultList();
 	}
 
+	@SuppressWarnings("unchecked")
 	public List<Auction> getAllNonActiveAuctions() {
-		Query query = em.createQuery("SELE)
-		return null;
+		Query query = em.createQuery("SELECT e FROM Auction e WHERE e.active = FALSE", Auction.class);
+		return query.getResultList();
 	}
 }

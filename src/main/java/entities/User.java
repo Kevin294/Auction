@@ -31,6 +31,12 @@ public class User implements Serializable{
 	@Column(name="password")
 	private String password;
 	
+	@Column(name="rating")
+	private double rating;
+	
+	@Column(name="votes")
+	private Integer votes;
+	
 	@OneToOne(cascade = CascadeType.PERSIST)
 	@JoinColumn(name="address_id")
 	private Address address;
@@ -55,6 +61,8 @@ public class User implements Serializable{
 		this.email = email;
 		this.phone = phone;
 		this.password = password;
+		this.votes = 0;
+		this.rating = 0;
 		
 	}
 
@@ -131,6 +139,22 @@ public class User implements Serializable{
 
 	public void setPassword(String password) {
 		this.password = password;
+	}
+
+	public double getRating() {
+		return rating;
+	}
+
+	public void setRating(double rating) {
+		this.rating = rating;
+	}
+
+	public Integer getVotes() {
+		return votes;
+	}
+
+	public void setVotes(Integer votes) {
+		this.votes = votes;
 	}
 
 }
