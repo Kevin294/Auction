@@ -1,19 +1,38 @@
-<html lang="en"
-      xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:f="http://xmlns.jcp.org/jsf/core"
-      xmlns:ui="http://java.sun.com/jsf/facelets">
-      
-    <h:head>
-        <title>Login</title>
-    </h:head>
-    <h:body>
-    <h:dataTable value="#{home.auctions}" var="auction">
-    <h:column>
-        <h:link value="#{auction.product}" outcome="auction">
-            <f:param name="id" value="#{auction.id}" />
-        </h:link>
-    </h:column>
-</h:dataTable>
-    </h:body>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<h:head>
+	<title>Auction</title>
+</h:head>
+<h:body>
+	<h:dataTable value="#{auctionBean.auctions}" var="auction">
+		<h:column>
+			#{auction.product.id}
+		</h:column>
+		<h:column>
+			#{auction.product.name}
+		</h:column>
+		<h:column>
+			#{auction.bid.value}
+		</h:column>
+		<h:column>
+			<h:form>
+				<h:inputText value="#{auctionBean.bidvalue}" required="true">
+					<f:convertNumber IntegerOnly="true" type="number" />
+				</h:inputText>
+
+				<h:commandButton value="bid" action="#{auctionBean.submit}">
+					<f:setPropertyActionListener
+						target="#{auctionBean.selectedauction}" value="#{auction}" />
+				</h:commandButton>
+			</h:form>
+		</h:column>
+
+	</h:dataTable>
+	<h:form>
+	<h:commandButton value="Log out" action="#{login.logout}"/>
+	</h:form>
+</h:body>
 </html>

@@ -7,16 +7,19 @@
     </h:head>
     <h:body>
     <h:form>
+    
     	Username: <h:inputText value="#{register.username}" required = "true" /><br/>
     	Password: <h:inputText value="#{register.password}" required = "true" /><br/>
     	Firstname: <h:inputText value="#{register.firstname}" required = "true" /><br/>
     	Lastname: <h:inputText value="#{register.lastname}" required = "true" /><br/>
     	Email: <h:inputText value="#{register.email}" required = "true" /><br/>
-    	Phone: <h:inputText value="#{register.phone}" required = "true" /><br/>
+    	Phone: <h:inputText value="#{register.phone}" required = "true">
+    	<f:convertNumber integerOnly="true" type="number" /></h:inputText><br/>
        	Address: <h:inputText value="#{register.address}" required = "true" /><br/>
     	Country: <h:inputText value="#{register.country}" required = "true" /><br/>
        	City: <h:inputText value="#{register.city}" required = "true" /><br/>
-    	Areacode: <h:inputText value="#{register.areacode}" required = "true" /><br/>
+    	Areacode: <h:inputText value="#{register.areacode}" required = "true">
+    	<f:convertNumber integerOnly="true" type="number" /></h:inputText><br/>
     	<h:commandButton value="Register" action ="#{register.submit}" />
     	<h:messages />
     </h:form>

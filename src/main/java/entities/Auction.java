@@ -33,7 +33,7 @@ public class Auction implements Serializable{
 	@JoinColumn(name = "username")
 	private User user;
 
-	@OneToOne
+	@OneToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name ="bid_id")
 	private Bid bid;
 
