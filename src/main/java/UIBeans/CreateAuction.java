@@ -35,7 +35,7 @@ public class CreateAuction {
 		User user = (User) session.getAttribute("currentuser");
 		
 		if(user == null) {
-			context.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "Failed: Auction not registerd", null));
+			context.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "Failed: You have to be logged in to create auction", null));
 			return "notloggedin";
 		}
 		Product prod = new Product(prodDescription, prodCategory, prodName);
@@ -48,7 +48,7 @@ public class CreateAuction {
 		} catch(NumberFormatException ex){
 			
 			context.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "Failed: Auction not registerd", null));
-			return "notdouble";
+			return null;
 			
 		}
 		
@@ -56,7 +56,7 @@ public class CreateAuction {
 		handel.newAuction(newAuction, minimumBid, prod);
 		context.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR,
 				"Status: Your auction " + prodName + " was successful registered", null));
-		return null;
+		return "createdauction";
 		
 	}
 	public String getMinBid() {

@@ -44,5 +44,21 @@
 			<to-view-id>/index.xhtml</to-view-id>
 		</navigation-case>
 	</navigation-rule>
+	
+	<navigation-rule>
+		<from-view-id>/createauction.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>notloggedin</from-outcome>
+			<to-view-id>/index.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	
+	<navigation-rule>
+		<from-view-id>/createauction.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>createdauction</from-outcome>
+			<to-view-id>/auction.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
 
 </faces-config>
