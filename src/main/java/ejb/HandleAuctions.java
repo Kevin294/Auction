@@ -5,10 +5,13 @@ import java.util.List;
 
 import javax.ejb.EJB;
 import javax.ejb.Stateless;
+import javax.jms.JMSException;
+import javax.naming.NamingException;
 
 import EJBDAO.AuctionDAO;
 import EJBDAO.UserDAO;
 import entities.*;
+import jms.JmsAssist;
 
 @Stateless
 public class HandleAuctions {
@@ -18,6 +21,9 @@ public class HandleAuctions {
 		
 	@EJB
 	UserDAO userdao;
+	
+	@EJB
+	JmsAssist jms;
 	
 	public void newAuction(Auction auction, double minimumbid, Product product) {
 		Bid bid = new Bid(minimumbid, auction.getUser().getUsername());
@@ -37,6 +43,15 @@ public class HandleAuctions {
 		Auction auc = auctiondao.getAuctionById(auction.getId());
 		auc.setActive(false);
 		auctiondao.updateAuction(auc);
+		try {
+			jms.submit(auction);
+		} catch (NamingException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (JMSException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		return userdao.getUserById(auc.getBid().getOwner());
 	}
 	
