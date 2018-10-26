@@ -27,12 +27,12 @@ public class Login {
 		User user = auth.authenticate(username, password);
 		if(user != null) {
 			status = true;
-			context.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "Status: "+auth.authenticate(username, password), null));
+			context.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "Status: Logged in: "+auth.authenticate(username, password).getUsername(), null));
 			HttpSession session = (HttpSession) FacesContext.getCurrentInstance().getExternalContext().getSession(false);
 			session.setAttribute("currentuser", user);
 			return "loggedin";
 		}else {
-			context.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "Status: "+auth.authenticate(username, password), null));
+			context.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "Status: Failed", null));
 			return null;
 		}
 	}
