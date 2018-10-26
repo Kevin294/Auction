@@ -27,9 +27,10 @@ public class AuctionListener implements MessageListener{
 		try {
 			Auction auction = message.getBody(Auction.class);
 			JsonObject json = new JsonObject();
-			json.addProperty("User", auction.getUser().getUsername());
+			json.addProperty("Seller", auction.getUser().getUsername());
 			json.addProperty("Product", auction.getProduct().getName());
-			json.addProperty("Test", "test");
+			json.addProperty("Price", auction.getBid().getValue());
+			json.addProperty("Winner", auction.getBid().getOwner());
 			
 			Logger logger = Logger.getLogger(getClass().getName());
 			logger.info("DTWEET User: " + auction.getUser().getUsername()); 
