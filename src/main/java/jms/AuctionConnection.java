@@ -18,7 +18,7 @@ public class AuctionConnection {
 
 	private JsonParser jsonParser = new JsonParser();
 
-	private String thingName = "dat8945";
+	private String thingName = "dat250gruppe7";
 
 	
 	public AuctionConnection() {

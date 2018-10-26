@@ -17,7 +17,8 @@ import entities.Auction;
 
 @MessageDriven(mappedName = "jms/dat250/Topic", activationConfig = {
 		@ActivationConfigProperty(propertyName = "acknowledgeMode", propertyValue = "Auto-acknowledge"),
-		@ActivationConfigProperty(propertyName = "messageSelector", propertyValue = "auctionWinner = false") })
+	//	@ActivationConfigProperty(propertyName = "messageSelector", propertyValue = "auctionWinner = 'false'")
+		})
 public class AuctionListener implements MessageListener{
 	
 	@Override
@@ -28,12 +29,13 @@ public class AuctionListener implements MessageListener{
 			JsonObject json = new JsonObject();
 			json.addProperty("User", auction.getUser().getUsername());
 			json.addProperty("Product", auction.getProduct().getName());
+			json.addProperty("Test", "test");
 			
-//			Logger logger = Logger.getLogger(getClass().getName());
-//			logger.info("DTWEET User: " + auction.getUser().getUsername()); 
-//			logger.info("DTWEET Product: " + auction.getProduct().getName());
-//			logger.info("DTWEET:...");
-//			logger.info("DTWEET JSON: " + json);
+			Logger logger = Logger.getLogger(getClass().getName());
+			logger.info("DTWEET User: " + auction.getUser().getUsername()); 
+			logger.info("DTWEET Product: " + auction.getProduct().getName());
+			logger.info("DTWEET:...");
+			logger.info("DTWEET JSON: " + json);
 			
 			try {
 				AuctionConnection dc = new AuctionConnection();

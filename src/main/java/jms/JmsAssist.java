@@ -24,7 +24,7 @@ public class JmsAssist {
 	private Topic topic;
 
 	public void submit(Auction auction) throws NamingException, JMSException {
-		context.createProducer().setProperty("auctionWinner", auction.isActive()).send(topic, auction);
+		context.createProducer().setProperty("auctionWinner", String.valueOf(auction.isActive())).send(topic, auction);
 
 	}
 }
