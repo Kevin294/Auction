@@ -33,6 +33,11 @@ public class Rate {
 		FacesContext context = FacesContext.getCurrentInstance();
 		if (user != null) {
 			User target = selectedauction.getUser();
+			if(user.getUsername().equals(target.getUsername())) {
+				context.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "Status: Failed", null));
+
+				return null;
+			}
 			Integer votes = target.getVotes();
 			double result = target.getRating()*votes;
 			votes++;

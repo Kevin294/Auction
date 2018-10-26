@@ -26,6 +26,10 @@
 			#{auction.bid.value}
 		</h:column>
 		<h:column>
+			<f:facet name="header">Auction active</f:facet>
+			#{auction.active}
+		</h:column>
+		<h:column>
 			<h:form>
 				<h:commandButton value="View buyerinfo"
 					action="#{yourauctions.submit}">
